@@ -6,24 +6,47 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
-// Ambil data GeoJSON dari backend
-fetch("http://localhost:4000/api/map/geojson")
-  .then(res => res.json())
-  .then(data => {
-
-    // Tambahkan geoJSON ke peta dengan marker
-    L.geoJSON(data, {
-
-      // Untuk point, buat marker
-      pointToLayer: function (feature, latlng) {
-        return L.marker(latlng)
-          .bindPopup(
-            `<b>Koordinat</b><br>
-            Lat: ${latlng.lat}<br>
-            Lng: ${latlng.lng}`
-          );
+// Data GeoJSON statis untuk titik banjir
+const floodData = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6191, -6.9175]
+      },
+      "properties": {
+        "name": "Titik Banjir 1",
+        "severity": "high"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6291, -6.9275]
+      },
+      "properties": {
+        "name": "Titik Banjir 2",
+        "severity": "medium"
+      }
+    }
+  ]
+};
 
-    }).addTo(map);
-  })
-  .catch(err => console.error("Error ambil data GeoJSON:", err));
+// Tambahkan geoJSON ke peta dengan marker
+L.geoJSON(floodData, {
+  // Untuk point, buat marker
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng)
+      .bindPopup(
+        `<b>${feature.properties.name}</b><br>
+        Severity: ${feature.properties.severity}<br>
+        Lat: ${latlng.lat.toFixed(4)}<br>
+        Lng: ${latlng.lng.toFixed(4)}`
+      );
+  }
+}).addTo(map);
+
+console.log("Map loaded successfully!");

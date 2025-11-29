@@ -1,14 +1,15 @@
 {
-  "name": "frontend",
+  "name": "frontend-titik-banjir",
   "version": "1.0.0",
+  "description": "Frontend untuk visualisasi titik banjir",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["banjir", "map", "leaflet"],
+  "author": "ZahraDH28",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
   }
