@@ -8,4 +8,4 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(3000, () => console.log("Frontend running at http://localhost:3000"));
+app.listen(3000, () => console.log("Frontend running at https://vercel.com/zahradh28s-projects/frontend-titik-banjir"));
