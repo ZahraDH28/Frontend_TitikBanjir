@@ -1,0 +1,34 @@
+# ✅ PANDUAN MENGAKTIFKAN GITHUB PAGES
+
+File sudah di-push ke GitHub. Sekarang ikuti langkah ini untuk mengaktifkan GitHub Pages:
+
+## LANGKAH 1: Buka Repository Settings
+1. Pergi ke https://github.com/ZahraDH28/Frontend_TitikBanjir
+2. Klik tab **Settings** (di menu atas)
+
+## LANGKAH 2: Buka Pages
+1. Di sidebar kiri, cari dan klik **Pages**
+2. Atau langsung buka: https://github.com/ZahraDH28/Frontend_TitikBanjir/settings/pages
+
+## LANGKAH 3: Konfigurasi Deploy
+1. Di bagian **Source**, pilih **Deploy from a branch**
+2. Di bagian **Branch**, pilih:
+   - Branch: `main`
+   - Folder: `/ (root)`
+3. Klik **Save**
+
+## LANGKAH 4: Tunggu Deploy Selesai
+- GitHub akan mulai build website Anda
+- Tunggu 1-2 menit sampai status berubah menjadi hijau ✅
+- Anda akan melihat URL di bagian atas Pages settings
+
+## RESULT
+Website akan tersedia di:
+```
+https://zahradh28.github.io/Frontend_TitikBanjir/
+```
+
+Jika masih 404, coba:
+1. Clear browser cache (Ctrl+Shift+Delete)
+2. Tunggu 5 menit agar GitHub Pages selesai rebuild
+3. Cek log di GitHub → Settings → Pages untuk error message
